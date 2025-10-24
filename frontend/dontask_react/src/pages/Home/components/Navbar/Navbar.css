@@ -1,0 +1,158 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  position: relative;
+  margin: 1rem;
+  height: calc(100vh - 2rem);
+  width: 5.5rem;
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.navbar-center-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.profile-wrapper {
+  position: relative;
+  width: 3.8rem;
+  height: 3.8rem;
+}
+
+.navbar-container-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.8rem;
+  height: 3.8rem;
+  margin: 0;
+  border-radius: 50%;
+  margin: 0.5rem auto;
+}
+
+.navbar-button {
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.navbar-button.avatar:hover {
+  filter: brightness(0.8);
+  transition: filter 0.2s ease;
+}
+
+.navbar-container img {
+  height: 3rem;
+  width: auto;
+}
+
+.navbar-top img {
+  height: 3rem;
+  width: auto;
+  margin: 1rem 0;
+}
+
+.navbar-container-item img {
+  height: 3.8rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-button:hover {
+  background-color: #cacaca;
+  transition: background-color 0.2s ease;
+}
+
+.navbar-button.active {
+  background-color: #202124;
+}
+
+.navbar-button.active img {
+  filter: brightness(0) invert(1);
+}
+
+.navbar-button.active:hover {
+  background-color: #2d2e32;
+  transition: background-color 0.2s ease;
+}
+
+.navbar-container-item.profile {
+  border-radius: 50%;
+  margin: 0;
+}
+
+.navbar-container-item .profile .navbar-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.avatar-image {
+  margin: 0;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.disabled-link .navbar-button {
+  background-color: #cacaca;
+}
+
+.disabled-link .navbar-button:hover {
+  background-color: #cacaca;
+}
+
+.disabled-link .navbar-button {
+  cursor: default;
+}
+
+.disabled-link {
+  cursor: default;
+}

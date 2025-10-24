@@ -1,0 +1,568 @@
+/* card.css */
+
+.card-container {
+  width: 100%;
+  height: 42rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ КОЛОНКИ ("КАРТОЧКИ") */
+/* ------------------------------------------- */
+.existing-list-container {
+  flex-shrink: 0;
+  width: 30rem;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 🔑 НОВЫЙ СТИЛЬ: Обертка для заголовка и полосы */
+.list-header-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.list-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+/* 🔑 НОВЫЙ СТИЛЬ: Оранжевая полоска под названием списка */
+.list-underline {
+  height: 3px;
+  width: 100%; /* Полная ширина колонки */
+  background-color: #fa8c16; /* Оранжевый цвет */
+  border-radius: 1.5px;
+  margin-bottom: 5px; /* Небольшой отступ до начала карточек */
+}
+
+/* 🔑 Важно: Скролл находится здесь */
+.list-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  padding-right: 5px;
+  background-color: #f1f1f1;
+  flex-grow: 1;
+  overflow-y: auto; /* 🔑 Обеспечивает скролл списка задач */
+  border-radius: 0.5rem;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ ЗАДАЧИ (ТАСКА) ВНУТРИ КОЛОНКИ */
+/* ------------------------------------------- */
+.list-card-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  cursor: pointer;
+  word-wrap: break-word;
+  min-height: 12.5rem;
+  border: 1px solid #c0c0c0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*.list-card-item:hover {
+  background-color: #f0f0f0;
+}*/
+
+/* 🔑 Новые стили для отображения дедлайна/приоритета в заголовке */
+.task-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*flex-start;*/
+  gap: 10px;
+}
+
+/* 🔑 Компактный индикатор дедлайна в заголовке */
+.task-info-compact-indicator {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  background-color: #e6e6e6;
+  border-radius: 4px;
+  color: #5e6c84;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.list-task-content {
+  font-weight: 600;
+  flex-grow: 1;
+  color: #172b4d;
+}
+
+/* 🔑 Стиль для дополнительной информации/описания */
+.task-description-placeholder {
+  font-size: 14px;
+  color: #5e6c84;
+  margin: 5px 0;
+}
+
+/* 🔑 Стили для Прогресс-бара */
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  margin: 5px 0 10px 0; /* Отступы */
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #f5222d; /* Красный цвет */
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.task-info-indicators {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.task-indicator-item {
+  display: flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #172b4d;
+}
+
+.indicator-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  opacity: 0.7;
+}
+
+/* 🔑 Стили для Приоритета */
+.priority-indicator.priority-средний,
+.priority-footer.priority-средний {
+  background-color: #ffe8cc; /* Светло-оранжевый */
+  border: 1px solid #ff9933;
+  color: #d16b00;
+}
+
+/* 🔑 Стили для Дедлайна */
+.deadline-indicator,
+.deadline-footer {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  color: #5e6c84;
+}
+
+/* 🔑 Стили для Прогресс-бара */
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  margin: 5px 0 10px 0; /* Отступы: сверху 5px, снизу 10px */
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #f5222d; /* Красный цвет, как на скриншоте (для невыполненных задач/подзадач) */
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ БЛОКА ВНИЗУ (раскрытое состояние) */
+/* ------------------------------------------- */
+.task-details-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  padding-top: 8px;
+  border-top: 1px solid #ebecf0; /* Разделитель */
+  margin-bottom: 5px;
+}
+
+.task-footer-item {
+  /* Базовый стиль, определенный выше */
+  padding: 4px 8px; /* Увеличим паддинг для лучшего вида */
+}
+
+/* Стили для Участников */
+.members-footer {
+  margin-left: auto; /* Прижимает к правому краю */
+  display: flex;
+  gap: -8px; /* Создает наложение аватарок */
+  padding-right: 0;
+}
+
+.member-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #aeb8c9;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  z-index: 10; /* Для наложения */
+}
+/* Пример для имитации цветов */
+.members-footer .member-avatar:first-child {
+  background-color: #0079bf;
+}
+.members-footer .member-avatar:nth-child(2) {
+  background-color: #ff9933;
+}
+.members-footer .member-avatar:nth-child(3) {
+  background-color: #5aac44;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ ПОДЗАДАЧ
+/* ------------------------------------------- */
+
+.list-subtask {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-top: 8px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* 🔑 Разделитель, как на скриншоте, если нужно */
+  /* border-top: 1px solid #ebecf0; */
+}
+
+/* 🔑 Статус прогресса подзадач */
+.subtask-progress-status {
+  margin-bottom: 5px;
+}
+
+.subtask-status-text,
+.subtask-status-text-empty {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5e6c84;
+}
+.subtask-status-text-empty {
+  /* Если нужно выделить статус 0 из 0 */
+  color: #97a0af;
+}
+
+/* Стили для отдельной подзадачи */
+.subtask-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #5e6c84; /* Нейтральный цвет текста */
+}
+
+.subtask-checkbox {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+
+  /* ================================== */
+  /* НОВЫЕ СТИЛИ ДЛЯ КРУГЛОГО ЧЕКБОКСА */
+  /* ================================== */
+  appearance: none; /* Сброс стандартного вида */
+  -webkit-appearance: none; /* Сброс для старых WebKit/Safari */
+
+  border: 1px solid #777; /* Добавляем рамку, чтобы увидеть круг */
+  border-radius: 50%; /* Делаем круг */
+
+  /* Стилизация при отметке */
+  transition: background-color 0.1s, border-color 0.1s;
+}
+
+/* Стилизация состояния "отмечено" */
+.subtask-checkbox:checked {
+  background-color: #5aac44; /* Цвет заполнения, когда чекбокс отмечен */
+  border-color: #5aac44; /* Цвет рамки, когда чекбокс отмечен */
+}
+
+/* Дополнительно: можно добавить кастомную "галочку" или "точку" 
+   с помощью :after, но для начала попробуйте этот вариант. */
+
+.subtask-name {
+  flex-grow: 1;
+  line-height: 1.2;
+  padding: 2px 0;
+}
+
+.subtask-name.completed {
+  text-decoration: line-through;
+  color: #97a0af; /* Более тусклый цвет для выполненных */
+}
+
+/* Стили для кнопки создания подзадачи */
+.add-subtask-button {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  margin-top: 6px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #5e6c84;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.add-subtask-button:hover {
+  background-color: #091e4214; /* Легкий серый фон при наведении */
+  color: #172b4d;
+}
+
+.add-subtask-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ КНОПКИ СОЗДАНИЯ КОЛОНКИ ("КАРТОЧКИ") */
+/* ------------------------------------------- */
+.list-create-container.list-create-button-style {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+  background-color: rgba(241, 241, 241, 1);
+  flex-shrink: 0;
+  width: 20rem;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.list-create-container.list-create-button-style:hover:not(:disabled) {
+  background-color: rgba(230, 230, 230, 1);
+}
+
+.list-create-container.list-create-button-style:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.card-create-icon {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.8;
+}
+
+.card-create-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ КНОПКИ "ДОБАВИТЬ ЗАДАЧУ" (ПУНКТИР) */
+/* ------------------------------------------- */
+
+.add-task-button {
+  width: 100%;
+  background: none;
+  border: 2px dashed #999999;
+  border-radius: 0.5rem;
+  color: #999;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.1s, border-color 0.1s;
+  margin-top: 0.5rem;
+}
+
+.add-task-button:hover:not(:disabled) {
+  background-color: #d8d8d8;
+  border-color: #666;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ ФОРМЫ СОЗДАНИЯ ЗАДАЧИ */
+/* ------------------------------------------- */
+
+.task-form-container {
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-input-field {
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  resize: vertical;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.task-input-field:focus {
+  border-color: #0079bf;
+}
+
+.task-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-form-save-button {
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.1s;
+}
+
+.task-form-save-button:hover:not(:disabled) {
+  background-color: #61bd4f;
+}
+
+/* ------------------------------------------- */
+/* СТИЛИ КНОПКИ "ОТМЕНА" (Текст X) */
+/* ------------------------------------------- */
+
+.task-form-cancel-button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.1s;
+}
+
+.task-form-cancel-button:hover {
+  opacity: 1;
+}
+
+/* * ВНИМАНИЕ: Если у вас есть старый класс .task-form-cancel-icon, 
+* убедитесь, что вы его удалили или закомментировали.
+*/
+/* ------------------------------------------- */
+/* СТИЛИ ДЛЯ ФУТЕРА (Приоритет/Дедлайн/Аватарки) */
+/* ------------------------------------------- */
+.task-details-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  padding-top: 8px;
+  border-top: 1px solid #ebecf0;
+}
+
+.task-footer-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.indicator-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  opacity: 0.7;
+}
+
+/* 🔑 Стили для Приоритета */
+.priority-footer.priority-средний {
+  background-color: #ffe8cc; /* Светло-оранжевый */
+  border: 1px solid #ff9933;
+  color: #d16b00;
+}
+.priority-footer.priority-высокий {
+  /* 🔑 Новый стиль для "Высокий" */
+  background-color: #ffcccc; /* Светло-красный */
+  border: 1px solid #f5222d;
+  color: #a8071a;
+}
+/* Добавьте другие приоритеты по необходимости */
+
+/* 🔑 Стили для Дедлайна */
+.deadline-footer {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  color: #5e6c84;
+}
+
+/* 🔑 Стили для Участников */
+.members-footer {
+  margin-left: auto;
+  display: flex;
+  gap: -8px;
+  padding: 0; /* Удаляем внутренний паддинг, чтобы аватарки были прижаты */
+}
+
+.member-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #aeb8c9;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  z-index: 10;
+}
+/* Пример для имитации цветов */
+.members-footer .member-avatar:first-child {
+  background-color: #0079bf;
+}
+.members-footer .member-avatar:nth-child(2) {
+  background-color: #ff9933;
+}

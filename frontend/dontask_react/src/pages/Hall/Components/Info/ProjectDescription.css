@@ -1,0 +1,65 @@
+.project-description-container {
+  width: 100%;
+  height: 33%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.project-description-container p {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.project-description-textarea {
+  width: 100%;
+  height: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+/* СКЕЛЕТОНЫ */
+@keyframes pulse {
+  0% {
+    background-color: #f3f3f3;
+  }
+  50% {
+    background-color: #ecebeb;
+  }
+  100% {
+    background-color: #f3f3f3;
+  }
+}
+
+.skeleton-line {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+  width: 100%;
+}
+
+.desc-skeleton-short {
+  width: 30%;
+}
+
+.desc-skeleton-medium {
+  width: 70%;
+}

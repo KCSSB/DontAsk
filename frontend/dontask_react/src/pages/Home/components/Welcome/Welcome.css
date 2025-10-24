@@ -1,0 +1,98 @@
+/* Welcome.css */
+
+.welcome-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Обновлённые стили для welcome-container */
+.welcome-container {
+  height: 18rem;
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: #4285f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+/* Стиль при наведении только для активной кнопки */
+.welcome-container:hover {
+  background-color: #5d98fa;
+  transition: background-color 0.2s ease;
+}
+
+/* Новые стили для неактивной кнопки */
+.welcome-container.disabled {
+  /* Заменяем курсор на обычную стрелку */
+  cursor: default;
+  /* Убираем эффект наведения */
+  pointer-events: none;
+}
+
+/* Убираем подсветку при наведении для неактивной кнопки */
+.welcome-container.disabled:hover {
+  background-color: #4285f4; /* Возвращаем к исходному цвету */
+}
+
+/* ... остальные стили без изменений ... */
+
+.welcome-container img {
+  width: auto;
+  height: 100%;
+  margin-right: 8rem;
+}
+
+.title-container {
+  padding-left: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1.5rem;
+  width: 50%;
+}
+
+.title-container .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-container .row img {
+  height: 1.8rem;
+  width: auto;
+  margin: 0.5rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.welcome-title {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 3rem;
+  line-height: 150%;
+  color: #ffffff;
+  margin: 0;
+}
+
+.welcome-paragraph {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 1.8rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0;
+}
