@@ -1,0 +1,155 @@
+.steps-container {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+}
+
+.h2-style-steps {
+  margin: auto;
+  margin-left: 15rem;
+  font-family: UNCAGE_BOLD;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 35%;
+  text-align: center;
+}
+
+.steps-columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.steps-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  padding-top: 0.5rem;
+  margin-left: 20rem;
+}
+
+.steps-logo-wrapper {
+  height: 3.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.steps-logo-wrapper:nth-child(1) {
+  margin-bottom: 10.5rem;
+}
+
+.steps-logo-wrapper:nth-child(2) {
+  margin-bottom: 8.5rem;
+}
+
+.steps-logo-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.steps-logos img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.steps-descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 60%;
+}
+
+.steps-description h3 {
+  margin: 0 0 0.5rem 0;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.steps-description p {
+  margin: 0;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+/* 14 Pro Max */
+@media (min-width: 420px) and (max-width: 440px) and (min-height: 920px) and (max-height: 940px) and (orientation: portrait) {
+  .steps-container {
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    max-width: 95vw;
+    margin: 0 0 2rem 0;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .steps-columns {
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 95vw;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .steps-logos {
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    padding-top: 0;
+    width: 20%;
+    align-items: flex-start;
+  }
+
+  .steps-logo-wrapper {
+    height: 2.5rem;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .steps-logo-wrapper:nth-child(1) {
+    margin-bottom: 10rem;
+  }
+
+  .steps-logo-wrapper:nth-child(2) {
+    margin-bottom: 6rem;
+  }
+
+  .steps-logo-wrapper:last-child {
+    margin-bottom: 0;
+  }
+
+  .steps-logos img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .steps-descriptions {
+    width: auto;
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+
+  .steps-description h3 {
+    font-size: 1.4rem;
+  }
+
+  .steps-description p {
+    font-size: 1rem;
+  }
+}

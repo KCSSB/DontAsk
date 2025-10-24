@@ -1,0 +1,206 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.landing-page {
+  position: relative;
+  width: calc(100% - 2rem);
+  height: calc(100vh - 2rem);
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.frame-tasks {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  width: 20%;
+  height: auto;
+  border-radius: 1.3rem;
+  transform: rotate(-8.3deg);
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.landing-page .frame-tasks img {
+  height: 2.5rem;
+  width: auto;
+}
+
+.landing-page .frame-tasks h6 {
+  margin: auto 0;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+
+.frame-tasks-inside {
+  position: relative;
+  background-color: #1a73e8;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.frame-tasks-inside-text {
+  color: white;
+  margin: auto 0;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1;
+  width: 80%;
+}
+
+.frame-tasks-inside-bottom {
+  bottom: 0;
+  left: 0;
+  margin-top: 3rem;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.frame-tasks-inside p {
+  color: white;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+}
+
+.priority-row img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 0.3rem solid white;
+}
+
+.priority-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.frame-one-place {
+  background-color: #eacf85;
+  transform: rotate(23.52deg);
+  width: 11%;
+  height: auto;
+  position: absolute;
+  left: -0.5rem;
+  bottom: 35%;
+  padding: 2rem 0.75rem 5rem 0.75rem;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+}
+
+.frame-one-place p {
+  font-family: Ura_Bum_Bum;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: black;
+}
+
+.frame-notice {
+  transform: rotate(-23.1deg);
+  width: auto;
+  height: auto;
+  background-color: white;
+  position: absolute;
+  right: -3rem;
+  bottom: 65%;
+  border-radius: 1.3rem;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.frame-notice-text {
+  margin: 0;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-left: 0;
+}
+
+.frame-notice img {
+  width: 1.5rem;
+  transform: rotate(23.1deg);
+  height: auto;
+}
+
+.frame-notice p {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+/* АДАПТИВНОСТЬ ПОД РАЗНЫЕ ЭКРАНЫ */
+
+/* 14 Pro Max: */
+@media (min-width: 420px) and (max-width: 440px) and (min-height: 920px) and (max-height: 940px) {
+  .frame-tasks,
+  .frame-tasks-inside,
+  .frame-one-place,
+  .frame-notice {
+    display: none;
+  }
+  .landing-page {
+    width: calc(100% - 1rem);
+    height: calc(100%-1rem);
+    margin: 0.5rem auto;
+    border-radius: 1rem;
+  }
+}

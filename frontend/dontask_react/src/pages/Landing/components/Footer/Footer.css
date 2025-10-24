@@ -1,0 +1,102 @@
+.footer-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 3rem;
+  background-color: #202124;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  min-height: 6rem;
+  margin-top: 3rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  width: 4rem;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.faq-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0%;
+  transition: border-bottom 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.faq-button:hover {
+  border-bottom: 3px solid #ffffff;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: right;
+  align-items: center;
+}
+
+.footer-right p {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: white;
+  margin: 0;
+}
+
+/* 14 Pro Max */
+@media only screen and (min-width: 420px) and (max-width: 440px) and (min-height: 920px) and (max-height: 940px) and (orientation: portrait) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    gap: 1.5rem;
+  }
+
+  .footer-left {
+    gap: 0.75rem;
+  }
+
+  .footer-logo {
+    width: 3rem;
+    margin-right: 1rem;
+  }
+
+  .faq-button {
+    font-size: 1.3rem;
+    border-bottom-width: 2px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .footer-right p {
+    font-size: 1.3rem;
+  }
+}

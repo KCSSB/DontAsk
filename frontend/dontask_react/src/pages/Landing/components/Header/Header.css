@@ -1,0 +1,111 @@
+.header-container {
+  box-sizing: border-box;
+  position: relative;
+  width: 60%;
+  height: 4rem;
+  background-color: #202124;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 2rem;
+  align-items: center;
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+  z-index: 10;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-left img {
+  height: 2.8rem;
+  max-width: 18%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.header-left h1 {
+  font-family: UNCAGE_BOLD;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: auto 0;
+  padding-top: 0.3rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right button {
+  margin-left: 0.25rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  border: none;
+  color: #202124;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.header-right .text-button {
+  background: none;
+  color: #ffffff;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.header-right button:hover {
+  background-color: #d2d3d3;
+  transition: background-color 0.2s ease;
+}
+
+.header-right .help:hover {
+  background-color: #4a4a4d;
+  transition: background-color 0.2s ease;
+}
+
+/* 14 Pro Max*/
+@media (min-width: 420px) and (max-width: 440px) and (min-height: 920px) and (max-height: 940px) and (orientation: portrait) {
+  .header-container {
+    width: 90%;
+    height: 3.5rem;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.6rem rgba(0, 0, 0, 0.3);
+  }
+
+  .header-left img {
+    height: 2rem;
+    margin-inline: 0;
+  }
+
+  .header-left h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-right button {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+}

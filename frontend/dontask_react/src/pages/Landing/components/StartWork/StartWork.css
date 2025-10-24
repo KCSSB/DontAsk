@@ -1,0 +1,128 @@
+.start-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  background-color: transparent;
+  width: 85%;
+  z-index: 10;
+  margin: 1rem auto;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.start-container .img-container {
+  width: 7%;
+  aspect-ratio: 1 / 1;
+  background-color: #202124;
+  display: flex;
+  margin-top: 5rem;
+  margin-bottom: 0;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+}
+
+.start-container .img-container img {
+  height: 65%;
+  width: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.start-container h1 {
+  width: 60%;
+  margin: 2rem auto 0 auto;
+  font-family: UNCAGE_BOLD;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #202124;
+}
+
+.gradient-text {
+  background: linear-gradient(261.86deg, #202124 38.7%, #ff5e00 99.89%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.start-container p {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #202124;
+  margin: 1rem auto;
+}
+
+.start-container button {
+  box-sizing: border-box;
+  margin: 1.25rem auto;
+  width: fit-content;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  color: #ffffff;
+  background-color: #202124;
+  cursor: pointer;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  box-shadow: 0.65rem 0.65rem 0.75rem rgba(0, 0, 0, 0.4);
+}
+
+.start-container button:hover {
+  background-color: #4a4a4d;
+  transition: background-color 0.2s ease;
+}
+
+/* 14 Pro Max */
+@media (min-width: 420px) and (max-width: 440px) and (min-height: 920px) and (max-height: 940px) and (orientation: portrait) {
+  .start-container {
+    width: 95%;
+    margin-top: 1.5rem;
+  }
+
+  .start-container .img-container {
+    width: 15%;
+    margin: 3rem auto;
+    box-shadow: 0.4rem 0.4rem 0.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  .start-container .img-container img {
+    height: 70%;
+  }
+
+  .start-container h1 {
+    width: 80%;
+    font-size: 2.5rem;
+    margin: 2rem auto 3rem auto;
+  }
+
+  .start-container p {
+    font-size: 1.25rem;
+    margin: 1rem auto 0 auto;
+    width: 90%;
+  }
+
+  .start-container button {
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    margin: 5rem auto;
+    width: auto;
+  }
+}

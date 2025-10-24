@@ -1,0 +1,83 @@
+/* WorkspaceFooter.css */
+
+.workspace-footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.edit-mode-controls {
+  display: flex;
+  gap: 0;
+}
+
+.normal-mode-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-icon-img {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+/* Кнопка входа в режим редактирования (карандаш) */
+.enter-edit-button {
+  background-color: #ffffff;
+  border-color: #e0e0e0;
+}
+
+.enter-edit-button .edit-icon-img {
+  filter: grayscale(100%) brightness(30%);
+}
+
+.enter-edit-button:hover {
+  background-color: #cacaca;
+}
+
+.edit-icon-pencil {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Кнопка Применить */
+.apply-button {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  margin: 0.2rem;
+}
+.apply-button:hover {
+  background-color: #cacaca;
+}
+
+/* Кнопка Отменить */
+.cancel-button {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  margin: 0.2rem;
+}
+.cancel-button:hover {
+  background-color: #cacaca;
+}

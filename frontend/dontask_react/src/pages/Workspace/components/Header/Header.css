@@ -1,0 +1,58 @@
+.workspace-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+.workspace-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.workspace-titles {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.workspace-project-name {
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  color: rgba(163, 163, 163, 1);
+  margin: 0;
+}
+
+.workspace-board-name {
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 2rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.workspace-user-avatar-container {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.workspace-user-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
