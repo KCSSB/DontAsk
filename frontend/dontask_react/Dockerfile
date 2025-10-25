@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm install esbuild@0.25.4 && npm ci
+RUN npm install esbuild@0.25.10 && npm ci
 
 COPY . .
 
