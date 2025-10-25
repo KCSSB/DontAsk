@@ -14,10 +14,12 @@ export default function Navbar() {
   const location = useLocation();
   const isActiveHome = location.pathname === "/home";
   const isActiveHall = location.pathname.startsWith("/hall");
-  const isActiveWorkspace = location.pathname === "/workspace";
+  const isActiveWorkspace = location.pathname.startsWith("/workspace");
   const isActiveSettings = location.pathname === "/settings";
   const [userAvatar, setUserAvatar] = useState(default_avatar);
   const [lastProjectId, setLastProjectId] = useState(null);
+  const [lastWorkspaceProjectId, setLastWorkspaceProjectId] = useState(null);
+  const [lastWorkspaceBoardId, setLastWorkspaceBoardId] = useState(null);
   const [showNotifications, setShowNotifications] = useState(false);
 
   const updateAvatarFromToken = () => {
@@ -37,9 +39,22 @@ export default function Navbar() {
 
   useEffect(() => {
     updateAvatarFromToken();
+
     const storedProjectId = localStorage.getItem("lastVisitedProjectId");
     if (storedProjectId) {
       setLastProjectId(storedProjectId);
+    }
+
+    const storedWorkspaceProjectId = localStorage.getItem(
+      "lastVisitedWorkspaceProjectId"
+    );
+    const storedWorkspaceBoardId = localStorage.getItem(
+      "lastVisitedWorkspaceBoardId"
+    );
+
+    if (storedWorkspaceProjectId && storedWorkspaceBoardId) {
+      setLastWorkspaceProjectId(storedWorkspaceProjectId);
+      setLastWorkspaceBoardId(storedWorkspaceBoardId);
     }
 
     const handleTokenChange = () => {
@@ -56,6 +71,12 @@ export default function Navbar() {
   const hallLink = lastProjectId ? `/hall/${lastProjectId}` : "/hall";
 
   const isHallLinkDisabled = !lastProjectId && !isActiveHall;
+
+  const workspaceLink = lastWorkspaceBoardId
+    ? `/workspace/${lastWorkspaceBoardId}`
+    : "/workspace";
+
+  const isWorkspaceLinkDisabled = !lastWorkspaceBoardId && !isActiveWorkspace;
 
   const handleAvatarClick = () => {
     setShowNotifications((prev) => !prev);
@@ -92,7 +113,10 @@ export default function Navbar() {
             </button>
           </div>
         </Link>
-        <Link to="/workspace">
+        <Link
+          to={workspaceLink}
+          className={isWorkspaceLinkDisabled ? "disabled-link" : ""}
+        >
           <div className="navbar-container-item">
             <button
               className={

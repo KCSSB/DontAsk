@@ -44,34 +44,19 @@ const calculateDeadline = (subTasks) => {
 };
 
 // Компонент для отображения одной ПОДЗАДАЧИ (SubTask)
-const SubTaskItem = ({ subtask, projectId, boardId }) => {
-  const { toggleSubTaskStatus, loading } = useWorkspace();
-  const [isUpdating, setIsUpdating] = useState(false);
 
-  const handleToggle = async (e) => {
-    const newStatus = e.target.checked;
-
-    if (isUpdating || loading) return;
-
-    setIsUpdating(true);
-    try {
-      // ✅ Теперь передаём все 4 аргумента
-      await updateSubTaskStatus(projectId, boardId, subtask.subTaskId, newStatus);
-    } finally {
-      setIsUpdating(false);
-    }
-  };
-
+const SubTaskItem = ({ subtask }) => {
   return (
-    <div className="subtask-item">
+    <div key={subtask.subTaskId} className="subtask-item">
       <input
         type="checkbox"
         checked={subtask.isCompleted}
-        onChange={handleToggle}
-        disabled={isUpdating || loading}
+        readOnly
         className="subtask-checkbox"
       />
-      <span className={`subtask-name ${subtask.isCompleted ? "completed" : ""}`}>
+      <span
+        className={`subtask-name ${subtask.isCompleted ? "completed" : ""}`}
+      >
         {subtask.subTaskName}
       </span>
     </div>

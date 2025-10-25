@@ -35,61 +35,6 @@ export const useWorkspace = () => {
   return context;
 };
 
-const updateSubTaskStatus = async (projectId, boardId, subTaskId, isCompleted) => {
-  try {
-    // 🚀 Оптимистичное обновление — сразу меняем UI
-    setLists(prevLists =>
-      prevLists.map(list => ({
-        ...list,
-        cards: list.cards.map(card => ({
-          ...card,
-          subTasks: card.subTasks.map(subTask =>
-            subTask.subTaskId === subTaskId
-              ? { ...subTask, isCompleted }
-              : subTask
-          )
-        }))
-      }))
-    );
-
-    // 🌐 Отправляем запрос на сервер
-    const response = await fetch(
-      `/api/project/${projectId}/board/${boardId}/Task/UpdateSubTaskStatus/${subTaskId}`,
-      {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ isCompleted }),
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Ошибка при обновлении статуса на сервере');
-    }
-
-    // ✅ Успех — ничего не делаем, состояние уже актуально
-
-  } catch (error) {
-    // ❌ Ошибка — откатываем локальное изменение
-    setLists(prevLists =>
-      prevLists.map(list => ({
-        ...list,
-        cards: list.cards.map(card => ({
-          ...card,
-          subTasks: card.subTasks.map(subTask =>
-            subTask.subTaskId === subTaskId
-              ? { ...subTask, isCompleted: !isCompleted } // откат
-              : subTask
-          )
-        }))
-      }))
-    );
-    toast.error('Не удалось обновить статус подзадачи');
-    console.error(error);
-    throw error;
-  }
-};
 // 🔑 НОРМАЛИЗАЦИЯ ДАННЫХ
 const normalizeWorkspaceData = (data) => {
   if (!data) return data;
